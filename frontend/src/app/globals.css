@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    height: 100%;
+  }
+  
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #__next {
+    height: 100%;
+  }
+}
+
+@layer components {
+  .chat-message {
+    @apply max-w-xs lg:max-w-md px-4 py-2 rounded-lg;
+  }
+  
+  .chat-message-user {
+    @apply bg-blue-600 text-white ml-auto;
+  }
+  
+  .chat-message-assistant {
+    @apply bg-white text-gray-900 shadow-sm border mr-auto;
+  }
+  
+  .chat-message-error {
+    @apply bg-red-100 text-red-800 mr-auto;
+  }
+  
+  .agent-mode-button {
+    @apply flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors;
+  }
+  
+  .agent-mode-active {
+    @apply text-white;
+  }
+  
+  .agent-mode-inactive {
+    @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
+  }
+  
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+  }
+  
+  .modal-content {
+    @apply bg-white rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto;
+  }
+  
+  .input-field {
+    @apply w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+  
+  .button-primary {
+    @apply px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
+  }
+  
+  .button-secondary {
+    @apply px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+}
